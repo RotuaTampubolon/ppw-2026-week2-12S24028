@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Web - [Nama Mahasiswa]</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER & NAV -->
+    <header class="site-header">
+        <div class="container header-content">
+            <h1 class="logo">DevPortfolio</h1>
+            <nav class="main-nav" aria-label="Navigasi Utama">
+                <ul>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#portfolio">Portofolio</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- SECTION 1: ABOUT -->
+        <section id="about" class="section-block" aria-labelledby="title-about">
+            <h2 id="title-about" class="section-title">Tentang Saya</h2>
+            <div class="about-grid">
+                <article class="about-text">
+                    <p>Halo! Saya <strong>Rotua Immanuela Tampubolon</strong>, mahasiswa S1 Sistem Informasi di Institut Teknologi Del. Saya memiliki ketertarikan mendalam pada pengembangan web frontend, desain UI/UX, dan arsitektur data. Di halaman ini, Anda dapat melihat rekam jejak akademik, proyek, dan cara menghubungi saya untuk konsultasi atau kolaborasi.</p>
+                </article>
+                <aside class="about-aside" aria-labelledby="title-skills">
+                    <h3 id="title-skills">Fokus Keahlian</h3>
+                    <ul class="skill-list">
+                        <li>HTML5 & CSS3 Modern</li>
+                        <li>JavaScript ES6+</li>
+                        <li>UI/UX Design</li>
+                        <li>Database SQL</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- SECTION 2: PORTFOLIO -->
+        <section id="portfolio" class="section-block" aria-labelledby="title-portfolio">
+            <h2 id="title-portfolio" class="section-title">Rekapitulasi Proyek & Capaian</h2>
+            
+            <!-- TABEL SEMANTIK -->
+            <table class="data-table">
+                <caption>Daftar Matakuliah dan Proyek Terkait</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Kode</th>
+                        <th scope="col">Matakuliah</th>
+                        <th scope="col">Proyek Akhir</th>
+                        <th scope="col">Nilai</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">12S3101</th>
+                        <td>Pemrograman Web</td>
+                        <td>Single Page Portfolio</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">12S3202</th>
+                        <td>Basis Data</td>
+                        <td>Sistem Informasi Perpustakaan</td>
+                        <td>A-</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">12S3303</th>
+                        <td>Rekayasa Perangkat Lunak</td>
+                        <td>Aplikasi Manajemen Tugas</td>
+                        <td>A</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Rata-rata IPK Sementara</td>
+                        <td>3.85</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <h3 class="sub-title">Pengalaman Organisasi</h3>
+            <!-- ORDERED LIST -->
+            <ol class="timeline-list">
+                <li><strong>2024 - Sekarang:</strong> Staf Divisi Web IT Del</li>
+                <li><strong>2023 - 2024:</strong> Anggota Himpunan Mahasiswa Sistem Informasi</li>
+                <li><strong>2022 - 2023:</strong> Panitia Festival Teknologi Del</li>
+            </ol>
+        </section>
+
+        <!-- SECTION 3: CONTACT FORM -->
+        <section id="contact" class="section-block" aria-labelledby="title-contact">
+            <h2 id="title-contact" class="section-title">Formulir Layanan Konsultasi</h2>
+            <p class="section-desc">Silakan isi formulir berikut jika Anda tertarik untuk berdiskusi atau memesan jasa pembuatan web.</p>
+            
+            <form class="custom-form" action="#" method="POST">
+                <!-- FIELDSET 1 -->
+                <fieldset class="form-fieldset">
+                    <legend class="form-legend">Data Identitas</legend>
+                    
+                    <div class="form-group">
+                        <label for="nama" class="form-label">Nama Lengkap <span class="req">*</span></label>
+                        <input type="text" id="nama" name="nama" class="form-control" required placeholder="Masukkan nama lengkap">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email <span class="req">*</span></label>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="nama@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="telepon" class="form-label">No. Telepon</label>
+                            <input type="tel" id="telepon" name="telepon" class="form-control" placeholder="08123456789" pattern="[0-9]+">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="usia" class="form-label">Usia</label>
+                        <input type="number" id="usia" name="usia" class="form-control" min="15" max="100" placeholder="Contoh: 20">
+                    </div>
+                </fieldset>
+
+                <!-- FIELDSET 2 -->
+                <fieldset class="form-fieldset">
+                    <legend class="form-legend">Detail Permintaan</legend>
+
+                    <div class="form-group">
+                        <label for="layanan" class="form-label">Jenis Layanan <span class="req">*</span></label>
+                        <select id="layanan" name="layanan" class="form-control" required>
+                            <option value="" disabled selected>Pilih jenis layanan...</option>
+                            <option value="landing">Landing Page</option>
+                            <option value="company">Company Profile</option>
+                            <option value="ecommerce">E-Commerce</option>
+                            <option value="konsul">Konsultasi UI/UX</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Estimasi Budget</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="budget" value="<1jt" required> < Rp 1.000.000</label>
+                            <label class="radio-label"><input type="radio" name="budget" value="1-3jt"> Rp 1.000.000 - Rp 3.000.000</label>
+                            <label class="radio-label"><input type="radio" name="budget" value=">3jt"> > Rp 3.000.000</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Fitur Tambahan</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label"><input type="checkbox" name="fitur" value="responsive"> Desain Responsif</label>
+                            <label class="checkbox-label"><input type="checkbox" name="fitur" value="seo"> SEO Friendly</label>
+                            <label class="checkbox-label"><input type="checkbox" name="fitur" value="cms"> Integrasi CMS</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pesan" class="form-label">Deskripsi Proyek <span class="req">*</span></label>
+                        <textarea id="pesan" name="pesan" class="form-control" rows="5" required placeholder="Ceritakan secara singkat tentang proyek atau kebutuhan Anda..."></textarea>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-submit">Kirim Permintaan</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 [Nama Anda] - Institut Teknologi Del. All rights reserved.</p>
+            <nav class="footer-nav" aria-label="Navigasi Footer">
+                <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
