@@ -2,7 +2,7 @@
 
 **Nama:** Rotua Immanuela Tampubolon
 **NIM:** 12S24028
-**Kelas:** [isi kelasmu]
+**Kelas:** 13SI
 **Mata Kuliah:** Pemrograman dan Pengujian Web (12S3101)
 
 ## Ringkasan Pembaruan
@@ -24,7 +24,7 @@ Merefactor proyek Personal Portfolio & Service Portal dari Minggu 2 (HTML5 + CSS
 | Ikon | Tidak ada | Bootstrap Icons |
 
 ## Screenshot
-[tempel screenshot before/after di sini]
+https://rotuatampubolon.github.io/ppw-2026-week2-12S24028/ 
 
 ## Struktur File
 ```
