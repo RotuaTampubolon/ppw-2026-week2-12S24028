@@ -9,7 +9,7 @@
 Merefactor proyek Personal Portfolio & Service Portal dari Minggu 2 (HTML5 + CSS murni) menjadi berstandar Bootstrap 5.3, dengan tambahan navbar responsif, hero section, grid kartu proyek + modal detail, formulir floating labels dengan validasi visual, dan custom CSS variables untuk theming.
 
 ## Live Demo
-[isi link GitHub Pages di sini]
+https://rotuatampubolon.github.io/ppw-2026-week2-12S24028/
 
 ## Sebelum vs Sesudah Integrasi Framework
 
@@ -23,8 +23,6 @@ Merefactor proyek Personal Portfolio & Service Portal dari Minggu 2 (HTML5 + CSS
 | Styling | 8 CSS variables custom | 12 CSS variables, override tanpa `!important` |
 | Ikon | Tidak ada | Bootstrap Icons |
 
-## Screenshot
-https://rotuatampubolon.github.io/ppw-2026-week2-12S24028/ 
 
 ## Struktur File
 ```
