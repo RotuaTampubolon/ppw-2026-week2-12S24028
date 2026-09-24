@@ -1,21 +1,35 @@
-# Portofolio Web & Layanan Interaktif
+# Portofolio Web & Layanan Interaktif — Minggu 3
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+**Nama:** Rotua Immanuela Tampubolon
+**NIM:** 12S24028
+**Kelas:** [isi kelasmu]
+**Mata Kuliah:** Pemrograman dan Pengujian Web (12S3101)
 
-## 📌 Deskripsi Proyek
-Proyek ini adalah tugas mandiri minggu ke-2 untuk mata kuliah Pemrograman dan Pengujian Aplikasi Web (12S3101) di Institut Teknologi Del. Halaman web ini merupakan *Single Page Showcase Webpage* yang menampilkan identitas akademik, rekapitulasi proyek dalam bentuk tabel semantik, serta formulir konsultasi interaktif yang *accessible* dan estetik.
+## Ringkasan Pembaruan
+Merefactor proyek Personal Portfolio & Service Portal dari Minggu 2 (HTML5 + CSS murni) menjadi berstandar Bootstrap 5.3, dengan tambahan navbar responsif, hero section, grid kartu proyek + modal detail, formulir floating labels dengan validasi visual, dan custom CSS variables untuk theming.
 
-## 🚀 Fitur Utama
-- **Semantic HTML5**: Struktur dokumen yang bersih dan ramah SEO serta *screen reader*.
-- **Modern CSS Layout**: Pemanfaatan CSS Grid dan Flexbox untuk tata letak yang responsif.
-- **Desain Estetik (60-30-10 Rule)**: Palet warna harmonis, tipografi modern, sudut membulat, dan bayangan halus.
-- **Formulir Aksesibel**: Validasi native HTML5, label eksplisit, dan indikator fokus yang jelas.
-- **Fully Responsive**: Tampilan optimal di berbagai ukuran layar (Desktop, Tablet, Mobile).
+## Live Demo
+[isi link GitHub Pages di sini]
 
-## 📂 Struktur File
-```text
+## Sebelum vs Sesudah Integrasi Framework
+
+| Aspek | Minggu 2 (Sebelum) | Minggu 3 (Sesudah) |
+|---|---|---|
+| Layout | CSS Grid & Flexbox manual | Bootstrap Grid 12-kolom (`row-cols`) |
+| Navigasi | Nav statis tanpa toggle mobile | Navbar `sticky-top` + hamburger collapse |
+| Hero Section | Tidak ada | Hero section dengan CTA ganda |
+| Portofolio | Tabel semantik statis | Grid kartu proyek + Modal detail (4 kartu) |
+| Formulir | Input HTML5 polos | Floating Labels, Input Group berikon, validasi visual Bootstrap |
+| Styling | 8 CSS variables custom | 12 CSS variables, override tanpa `!important` |
+| Ikon | Tidak ada | Bootstrap Icons |
+
+## Screenshot
+[tempel screenshot before/after di sini]
+
+## Struktur File
+```
 .
-├── index.html      # Struktur utama halaman web
-├── style.css       # Styling dan tata letak modern
-└── README.md       # Dokumentasi proyek
+├── index.html
+├── custom-style.css
+└── README.md
+```
