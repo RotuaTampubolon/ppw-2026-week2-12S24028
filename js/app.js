@@ -3,6 +3,7 @@ const App = {
 
   async init() {
     this.renderProjectState("loading");
+    this.bindProjectEvents();
     try {
       this.state.projects = await ApiService.getProjects();
       this.populateCategoryFilter();
@@ -54,6 +55,46 @@ const App = {
           );
     this.renderProjectState(filtered.length ? "success" : "empty");
     if (filtered.length) this.renderProjects(filtered);
+  },
+
+  bindProjectEvents() {
+    const grid = document.getElementById("projectGrid");
+    if (grid.dataset.eventsBound) return;
+    grid.dataset.eventsBound = "true";
+    grid.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-project-id]");
+      if (button) this.openProjectModal(button.dataset.projectId);
+    });
+  },
+
+  openProjectModal(projectId) {
+    const project = this.state.projects.find((item) => item.id === projectId);
+    if (!project) return;
+
+    const title = document.getElementById("projectModalTitle");
+    const body = document.getElementById("projectModalBody");
+    title.textContent = project.title;
+    body.replaceChildren();
+
+    const image = this.createEl("img", "img-fluid rounded mb-3 w-100");
+    image.src = project.thumbnail;
+    image.alt = project.title;
+    image.loading = "lazy";
+    const description = this.createEl("p", "text-secondary", project.description);
+    const category = this.createEl("span", "badge bg-primary px-3 py-2", project.category);
+    const course = this.createEl("p", "text-muted small mt-3 mb-2", project.course);
+    const metrics = this.createEl("div", "d-flex flex-wrap gap-2 mb-3");
+    project.metrics.forEach((metric) => {
+      metrics.appendChild(this.createEl("span", "badge text-bg-light", `${metric.label}: ${metric.value}`));
+    });
+    const link = this.createEl("a", "btn btn-outline-primary", "Lihat proyek");
+    link.href = project.link;
+    link.target = "_blank";
+    link.rel = "noopener";
+    body.append(image, description, category, course, metrics, link);
+
+    const modal = document.getElementById("universalProjectModal");
+    bootstrap.Modal.getOrCreateInstance(modal).show();
   },
 
   renderProjectState(state) {

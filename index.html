@@ -178,144 +178,26 @@
         </div>
       </section>
 
-      <!-- MODALS -->
+      <!-- UNIVERSAL PROJECT MODAL -->
       <div
         class="modal fade"
-        id="modalProject1"
+        id="universalProjectModal"
         tabindex="-1"
-        aria-labelledby="modalProject1Label"
+        aria-labelledby="projectModalTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalProject1Label">
-                Single Page Portfolio
-              </h5>
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-primary text-white">
+              <h5 class="modal-title fw-bold" id="projectModalTitle"></h5>
               <button
                 type="button"
-                class="btn-close"
+                class="btn-close btn-close-white"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <p>
-                Dibangun dengan HTML5 semantik dan CSS murni (Grid &amp;
-                Flexbox), tanpa framework. Fokus pada struktur dokumen yang
-                ramah <em>screen reader</em>, formulir aksesibel dengan validasi
-                native, dan desain estetik berbasis aturan 60-30-10.
-              </p>
-              <p class="text-muted small mb-0">
-                Mata kuliah: Pemrograman Web (12S3101) &middot; Nilai: A
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="modal fade"
-        id="modalProject2"
-        tabindex="-1"
-        aria-labelledby="modalProject2Label"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalProject2Label">
-                Sistem Informasi Perpustakaan
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <p>
-                Perancangan skema basis data (ERD &amp; normalisasi) untuk
-                sistem peminjaman buku perpustakaan kampus, dilengkapi antarmuka
-                manajemen data anggota dan koleksi.
-              </p>
-              <p class="text-muted small mb-0">
-                Mata kuliah: Basis Data (12S3202) &middot; Nilai: A-
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="modal fade"
-        id="modalProject3"
-        tabindex="-1"
-        aria-labelledby="modalProject3Label"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalProject3Label">
-                Aplikasi Manajemen Tugas
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <p>
-                Aplikasi manajemen tugas berbasis Java OOP, dibangun dengan
-                pendekatan rekayasa perangkat lunak terstruktur mulai dari
-                requirement, desain, hingga implementasi.
-              </p>
-              <p class="text-muted small mb-0">
-                Mata kuliah: Rekayasa Perangkat Lunak (12S3303) &middot; Nilai:
-                A
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="modal fade"
-        id="modalProject4"
-        tabindex="-1"
-        aria-labelledby="modalProject4Label"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalProject4Label">
-                Modernisasi Portofolio (Minggu 3)
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <p>
-                Refactoring halaman portofolio Minggu 2 ke ekosistem Bootstrap
-                5.3: navbar responsif dengan hamburger toggle, hero section,
-                grid kartu proyek dengan modal detail, dan formulir dengan
-                floating labels serta validasi visual &mdash; dipadukan dengan
-                custom CSS variables untuk menjaga identitas warna personal.
-              </p>
-              <p class="text-muted small mb-0">
-                Mata kuliah: Pemrograman &amp; Pengujian Web (12S3101) &middot;
-                Praktikum Minggu 3
-              </p>
-            </div>
+            <div class="modal-body p-4" id="projectModalBody"></div>
           </div>
         </div>
       </div>
