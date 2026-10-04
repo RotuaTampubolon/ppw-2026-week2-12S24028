@@ -1,12 +1,12 @@
 const App = {
-  state: { projects: [] },
+  state: { projects: [], category: "all" },
 
   async init() {
     this.renderProjectState("loading");
     try {
       this.state.projects = await ApiService.getProjects();
-      this.renderProjectState(this.state.projects.length ? "success" : "empty");
-      if (this.state.projects.length) this.renderProjects(this.state.projects);
+      this.populateCategoryFilter();
+      this.renderFilteredProjects();
     } catch (err) {
       console.error("[App init]:", err);
       this.renderProjectState("error");
@@ -24,6 +24,36 @@ const App = {
     const grid = document.getElementById("projectGrid");
     grid.replaceChildren();
     list.forEach((p) => grid.appendChild(this.buildProjectCard(p)));
+  },
+
+  populateCategoryFilter() {
+    const filter = document.getElementById("projectCategoryFilter");
+    const categories = [
+      ...new Set(this.state.projects.map((project) => project.category)),
+    ].sort();
+    filter.replaceChildren(this.createEl("option", "", "Semua Kategori"));
+    filter.firstElementChild.value = "all";
+    categories.forEach((category) => {
+      const option = this.createEl("option", "", category);
+      option.value = category;
+      filter.appendChild(option);
+    });
+    filter.value = this.state.category;
+    filter.addEventListener("change", (event) => {
+      this.state.category = event.target.value;
+      this.renderFilteredProjects();
+    });
+  },
+
+  renderFilteredProjects() {
+    const filtered =
+      this.state.category === "all"
+        ? this.state.projects
+        : this.state.projects.filter(
+            (project) => project.category === this.state.category,
+          );
+    this.renderProjectState(filtered.length ? "success" : "empty");
+    if (filtered.length) this.renderProjects(filtered);
   },
 
   renderProjectState(state) {
