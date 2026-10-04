@@ -159,126 +159,7 @@
             Rekapitulasi proyek akademik dan capaian selama perkuliahan.
           </p>
 
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-2">
-            <div class="col">
-              <div class="card project-card h-100">
-                <div
-                  class="card-banner d-flex align-items-center justify-content-center"
-                >
-                  <i class="bi bi-window-stack"></i>
-                </div>
-                <div class="card-body d-flex flex-column">
-                  <div class="mb-2">
-                    <span class="badge badge-tech">HTML5</span>
-                    <span class="badge badge-tech">CSS3</span>
-                  </div>
-                  <h3 class="h5 card-title">Single Page Portfolio</h3>
-                  <p class="card-text text-muted small flex-grow-1">
-                    Pemrograman Web (12S3101) &mdash; halaman portofolio
-                    semantik dengan tabel data dan formulir aksesibel. Nilai: A
-                  </p>
-                  <button
-                    type="button"
-                    class="btn btn-accent mt-2"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalProject1"
-                  >
-                    Detail Proyek
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card project-card h-100">
-                <div
-                  class="card-banner d-flex align-items-center justify-content-center"
-                >
-                  <i class="bi bi-database"></i>
-                </div>
-                <div class="card-body d-flex flex-column">
-                  <div class="mb-2">
-                    <span class="badge badge-tech">SQL</span>
-                    <span class="badge badge-tech">ERD</span>
-                  </div>
-                  <h3 class="h5 card-title">Sistem Informasi Perpustakaan</h3>
-                  <p class="card-text text-muted small flex-grow-1">
-                    Basis Data (12S3202) &mdash; perancangan basis data dan
-                    antarmuka manajemen perpustakaan kampus. Nilai: A-
-                  </p>
-                  <button
-                    type="button"
-                    class="btn btn-accent mt-2"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalProject2"
-                  >
-                    Detail Proyek
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card project-card h-100">
-                <div
-                  class="card-banner d-flex align-items-center justify-content-center"
-                >
-                  <i class="bi bi-kanban"></i>
-                </div>
-                <div class="card-body d-flex flex-column">
-                  <div class="mb-2">
-                    <span class="badge badge-tech">Java OOP</span>
-                    <span class="badge badge-tech">RPL</span>
-                  </div>
-                  <h3 class="h5 card-title">Aplikasi Manajemen Tugas</h3>
-                  <p class="card-text text-muted small flex-grow-1">
-                    Rekayasa Perangkat Lunak (12S3303) &mdash; aplikasi
-                    manajemen tugas dengan pendekatan pengembangan terstruktur.
-                    Nilai: A
-                  </p>
-                  <button
-                    type="button"
-                    class="btn btn-accent mt-2"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalProject3"
-                  >
-                    Detail Proyek
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card project-card h-100">
-                <div
-                  class="card-banner d-flex align-items-center justify-content-center"
-                >
-                  <i class="bi bi-bootstrap-fill"></i>
-                </div>
-                <div class="card-body d-flex flex-column">
-                  <div class="mb-2">
-                    <span class="badge badge-tech">Bootstrap 5</span>
-                    <span class="badge badge-tech">Responsive</span>
-                  </div>
-                  <h3 class="h5 card-title">
-                    Modernisasi Portofolio (Minggu 3)
-                  </h3>
-                  <p class="card-text text-muted small flex-grow-1">
-                    Pemrograman &amp; Pengujian Web (12S3101) &mdash; refactor
-                    halaman ini sendiri ke Bootstrap 5.3 dengan navbar
-                    responsif, grid kartu, modal, dan form floating label.
-                  </p>
-                  <button
-                    type="button"
-                    class="btn btn-accent mt-2"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modalProject4"
-                  >
-                    Detail Proyek
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-2" id="projectGrid"></div>
           </div>
         </div>
       </section>
@@ -678,6 +559,7 @@
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/api-service.js"></script>
+    <script src="js/app.js"></script>
     <script>
       (() => {
         "use strict";
