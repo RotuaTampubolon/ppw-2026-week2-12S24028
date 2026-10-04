@@ -60,12 +60,20 @@ const App = {
     try {
       await ApiService.submitServiceOrder(payload);
       this.saveOrderToLocalStorage(payload);
-      this.showToast("Berhasil", "Permintaan layanan berhasil dikirim.", "success");
+      this.showToast(
+        "Berhasil",
+        "Permintaan layanan berhasil dikirim.",
+        "success",
+      );
       form.reset();
       form.classList.remove("was-validated");
     } catch (err) {
       console.error("[App form submit]:", err);
-      this.showToast("Gagal", "Permintaan layanan tidak dapat dikirim.", "danger");
+      this.showToast(
+        "Gagal",
+        "Permintaan layanan tidak dapat dikirim.",
+        "danger",
+      );
     } finally {
       submitButton.disabled = false;
       submitButton.textContent = originalText;
@@ -109,7 +117,8 @@ const App = {
     document.getElementById("profileTagline").textContent = profile.tagline;
     document.getElementById("profileHeadline").textContent = profile.headline;
     document.getElementById("profileSummary").textContent = profile.summary;
-    document.getElementById("profileBio").textContent = `Halo! Saya ${profile.name}, ${profile.title.toLowerCase()} di ${profile.institution}. ${profile.bio}`;
+    document.getElementById("profileBio").textContent =
+      `Halo! Saya ${profile.name}, ${profile.title.toLowerCase()} di ${profile.institution}. ${profile.bio}`;
 
     const skillList = document.getElementById("skillList");
     skillList.replaceChildren();
@@ -198,12 +207,30 @@ const App = {
     image.src = project.thumbnail;
     image.alt = project.title;
     image.loading = "lazy";
-    const description = this.createEl("p", "text-secondary", project.description);
-    const category = this.createEl("span", "badge bg-primary px-3 py-2", project.category);
-    const course = this.createEl("p", "text-muted small mt-3 mb-2", project.course);
+    const description = this.createEl(
+      "p",
+      "text-secondary",
+      project.description,
+    );
+    const category = this.createEl(
+      "span",
+      "badge bg-primary px-3 py-2",
+      project.category,
+    );
+    const course = this.createEl(
+      "p",
+      "text-muted small mt-3 mb-2",
+      project.course,
+    );
     const metrics = this.createEl("div", "d-flex flex-wrap gap-2 mb-3");
     project.metrics.forEach((metric) => {
-      metrics.appendChild(this.createEl("span", "badge text-bg-light", `${metric.label}: ${metric.value}`));
+      metrics.appendChild(
+        this.createEl(
+          "span",
+          "badge text-bg-light",
+          `${metric.label}: ${metric.value}`,
+        ),
+      );
     });
     const link = this.createEl("a", "btn btn-outline-primary", "Lihat proyek");
     link.href = project.link;

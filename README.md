@@ -39,26 +39,26 @@ Pemisahan ini membuat perubahan data tidak memerlukan perubahan shell HTML. Lapi
 
 ## Perbandingan Arsitektur
 
-| Arsitektur | Karakteristik | Kelebihan | Trade-off |
-| --- | --- | --- | --- |
-| Monolith | UI, aturan bisnis, dan data berada dalam satu aplikasi | Sederhana untuk dimulai dan dideploy | Perubahan satu bagian dapat memengaruhi seluruh aplikasi |
-| Microservices | Fitur dipisah menjadi service yang berkomunikasi melalui API | Independen untuk dikembangkan dan diskalakan | Operasional, observability, dan komunikasi jaringan lebih kompleks |
-| SSR | Server merakit HTML untuk setiap request | Konten awal dan SEO baik | Membutuhkan runtime server dan beban render di server |
-| CSR | Browser merakit DOM dari data API | Interaksi setelah load terasa mulus dan API dapat dipakai ulang | Membutuhkan JavaScript; state loading dan error harus ditangani |
-| Jamstack / decoupled static | Aset statis disajikan CDN dan data diakses melalui API | Hosting sederhana, caching efektif, dan boundary jelas | Integrasi data dinamis memerlukan API/serverless tambahan |
+| Arsitektur                  | Karakteristik                                                | Kelebihan                                                       | Trade-off                                                          |
+| --------------------------- | ------------------------------------------------------------ | --------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Monolith                    | UI, aturan bisnis, dan data berada dalam satu aplikasi       | Sederhana untuk dimulai dan dideploy                            | Perubahan satu bagian dapat memengaruhi seluruh aplikasi           |
+| Microservices               | Fitur dipisah menjadi service yang berkomunikasi melalui API | Independen untuk dikembangkan dan diskalakan                    | Operasional, observability, dan komunikasi jaringan lebih kompleks |
+| SSR                         | Server merakit HTML untuk setiap request                     | Konten awal dan SEO baik                                        | Membutuhkan runtime server dan beban render di server              |
+| CSR                         | Browser merakit DOM dari data API                            | Interaksi setelah load terasa mulus dan API dapat dipakai ulang | Membutuhkan JavaScript; state loading dan error harus ditangani    |
+| Jamstack / decoupled static | Aset statis disajikan CDN dan data diakses melalui API       | Hosting sederhana, caching efektif, dan boundary jelas          | Integrasi data dinamis memerlukan API/serverless tambahan          |
 
 ## Perbandingan Sebelum dan Sesudah Refactoring
 
-| Area | Sebelum (Week 3) | Sesudah (Week 4) |
-| --- | --- | --- |
-| Sumber data | Kartu, modal, profil, dan layanan hardcoded di HTML | Data dipisahkan ke tiga provider JSON |
-| Rendering proyek | Markup statis | CSR async dengan `fetch`, `async/await`, dan DOM API |
-| UI state | Belum dikelola terpusat | Loading, success, empty, dan error dengan retry |
-| Filter | Belum tersedia | Filter kategori instan dari `projects.json` |
-| Modal | Empat modal proyek terpisah | Satu `#universalProjectModal` berdasarkan data ID |
-| Form | Validasi inline dan submit standar | Validasi di `app.js`, DTO JSON, async dispatch, dan Toast |
-| State pesanan | Tidak persisten | `localStorage` dengan badge jumlah pesanan reaktif |
-| Keamanan | Belum ada CSP terarah | DOM API/textContent dan CSP tanpa `unsafe-inline` |
+| Area             | Sebelum (Week 3)                                    | Sesudah (Week 4)                                          |
+| ---------------- | --------------------------------------------------- | --------------------------------------------------------- |
+| Sumber data      | Kartu, modal, profil, dan layanan hardcoded di HTML | Data dipisahkan ke tiga provider JSON                     |
+| Rendering proyek | Markup statis                                       | CSR async dengan `fetch`, `async/await`, dan DOM API      |
+| UI state         | Belum dikelola terpusat                             | Loading, success, empty, dan error dengan retry           |
+| Filter           | Belum tersedia                                      | Filter kategori instan dari `projects.json`               |
+| Modal            | Empat modal proyek terpisah                         | Satu `#universalProjectModal` berdasarkan data ID         |
+| Form             | Validasi inline dan submit standar                  | Validasi di `app.js`, DTO JSON, async dispatch, dan Toast |
+| State pesanan    | Tidak persisten                                     | `localStorage` dengan badge jumlah pesanan reaktif        |
+| Keamanan         | Belum ada CSP terarah                               | DOM API/textContent dan CSP tanpa `unsafe-inline`         |
 
 ## Struktur Direktori
 
@@ -83,8 +83,8 @@ Provider saat ini berisi 4 proyek dan 4 layanan. Semua data yang berasal dari pr
 
 Pengukuran berikut harus diisi dari Chrome atau Edge DevTools pada tab Network dan Performance. Angka dan screenshot belum diisi karena tidak boleh direka.
 
-| Skenario | TTFB | FCP | Cache / status | Catatan |
-| --- | --- | --- | --- | --- |
+| Skenario  | TTFB                           | FCP                            | Cache / status                 | Catatan                        |
+| --------- | ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ |
 | Cold load | TODO: isi dari pengukuran saya | TODO: isi dari pengukuran saya | TODO: isi dari pengukuran saya | TODO: isi dari pengukuran saya |
 | Warm load | TODO: isi dari pengukuran saya | TODO: isi dari pengukuran saya | TODO: isi dari pengukuran saya | TODO: isi dari pengukuran saya |
 

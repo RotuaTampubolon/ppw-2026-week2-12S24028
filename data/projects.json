@@ -5,7 +5,7 @@
     "category": "Web",
     "course": "Pemrograman Web (12S3101)",
     "description": "Halaman portofolio semantik dengan tabel data dan formulir aksesibel, dibangun dengan HTML5 dan CSS murni (Grid dan Flexbox).",
-    "thumbnail": "assets/img/p1.jpg",
+    "thumbnail": "assets/img/p1.png",
     "tags": ["HTML5", "CSS3"],
     "metrics": [
       { "label": "Section", "value": "3" },
@@ -19,7 +19,7 @@
     "category": "Database",
     "course": "Basis Data (12S3202)",
     "description": "Perancangan skema basis data (ERD dan normalisasi) untuk sistem peminjaman buku perpustakaan kampus.",
-    "thumbnail": "assets/img/p2.jpg",
+    "thumbnail": "assets/img/p2.png",
     "tags": ["SQL", "ERD"],
     "metrics": [
       { "label": "Tabel", "value": "5" },
@@ -33,7 +33,7 @@
     "category": "Software Engineering",
     "course": "Rekayasa Perangkat Lunak (12S3303)",
     "description": "Aplikasi manajemen tugas berbasis Java OOP dengan pendekatan rekayasa perangkat lunak terstruktur, dari requirement sampai implementasi.",
-    "thumbnail": "assets/img/p3.jpg",
+    "thumbnail": "assets/img/p3.png",
     "tags": ["Java OOP", "RPL"],
     "metrics": [
       { "label": "Kelas", "value": "6" },
@@ -47,7 +47,7 @@
     "category": "Web",
     "course": "Pemrograman & Pengujian Web (12S3101)",
     "description": "Refactor halaman portofolio ke Bootstrap 5.3: navbar responsif, grid kartu, modal, dan form floating label dengan validasi visual.",
-    "thumbnail": "assets/img/p4.jpg",
+    "thumbnail": "assets/img/p4.png",
     "tags": ["Bootstrap 5", "Responsive"],
     "metrics": [
       { "label": "Bootstrap", "value": "5.3.3" },
