@@ -5,6 +5,7 @@ const App = {
     this.renderProjectState("loading");
     this.bindProjectEvents();
     this.bindServiceForm();
+    this.updateOrderBadge();
     try {
       const [projects, profile, services] = await Promise.all([
         ApiService.getProjects(),
@@ -58,6 +59,7 @@ const App = {
 
     try {
       await ApiService.submitServiceOrder(payload);
+      this.saveOrderToLocalStorage(payload);
       this.showToast("Berhasil", "Permintaan layanan berhasil dikirim.", "success");
       form.reset();
       form.classList.remove("was-validated");
@@ -77,6 +79,29 @@ const App = {
     toast.classList.remove("text-bg-success", "text-bg-danger");
     toast.classList.add(`text-bg-${variant}`);
     bootstrap.Toast.getOrCreateInstance(toast).show();
+  },
+
+  saveOrderToLocalStorage(payload) {
+    try {
+      const orders = JSON.parse(localStorage.getItem("serviceOrders") || "[]");
+      orders.push({ ...payload, createdAt: new Date().toISOString() });
+      localStorage.setItem("serviceOrders", JSON.stringify(orders));
+    } catch (err) {
+      console.error("[App localStorage]:", err);
+    }
+    this.updateOrderBadge();
+  },
+
+  updateOrderBadge() {
+    const badge = document.getElementById("orderCountBadge");
+    if (!badge) return;
+    try {
+      const orders = JSON.parse(localStorage.getItem("serviceOrders") || "[]");
+      badge.textContent = Array.isArray(orders) ? orders.length : "0";
+    } catch (err) {
+      console.error("[App localStorage read]:", err);
+      badge.textContent = "0";
+    }
   },
 
   renderProfile() {
