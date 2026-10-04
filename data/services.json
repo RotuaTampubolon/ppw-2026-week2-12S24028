@@ -1,0 +1,34 @@
+[
+  {
+    "id": "landing",
+    "name": "Landing Page",
+    "description": "Satu halaman promosi yang ringkas dan responsif.",
+    "price": 750000,
+    "deliveryDays": 3,
+    "features": ["Desain responsif", "1 halaman", "Formulir kontak"]
+  },
+  {
+    "id": "company",
+    "name": "Company Profile",
+    "description": "Situs profil perusahaan multi-seksi.",
+    "price": 2000000,
+    "deliveryDays": 7,
+    "features": ["Hingga 5 halaman", "SEO dasar", "Integrasi peta"]
+  },
+  {
+    "id": "ecommerce",
+    "name": "E-Commerce",
+    "description": "Toko online dengan katalog dan keranjang.",
+    "price": 4500000,
+    "deliveryDays": 14,
+    "features": ["Katalog produk", "Keranjang belanja", "Panel admin sederhana"]
+  },
+  {
+    "id": "konsul",
+    "name": "Konsultasi UI/UX",
+    "description": "Sesi review dan rekomendasi desain antarmuka.",
+    "price": 500000,
+    "deliveryDays": 2,
+    "features": ["Review antarmuka", "Rekomendasi perbaikan", "Laporan singkat"]
+  }
+]

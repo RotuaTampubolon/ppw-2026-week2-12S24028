@@ -1,0 +1,58 @@
+[
+  {
+    "id": "p1",
+    "title": "Single Page Portfolio",
+    "category": "Web",
+    "course": "Pemrograman Web (12S3101)",
+    "description": "Halaman portofolio semantik dengan tabel data dan formulir aksesibel, dibangun dengan HTML5 dan CSS murni (Grid dan Flexbox).",
+    "thumbnail": "assets/img/p1.jpg",
+    "tags": ["HTML5", "CSS3"],
+    "metrics": [
+      { "label": "Section", "value": "3" },
+      { "label": "Framework", "value": "Tanpa framework" }
+    ],
+    "link": "https://github.com/RotuaTampubolon/ppw-2026-week2-12S24028"
+  },
+  {
+    "id": "p2",
+    "title": "Sistem Informasi Perpustakaan",
+    "category": "Database",
+    "course": "Basis Data (12S3202)",
+    "description": "Perancangan skema basis data (ERD dan normalisasi) untuk sistem peminjaman buku perpustakaan kampus.",
+    "thumbnail": "assets/img/p2.jpg",
+    "tags": ["SQL", "ERD"],
+    "metrics": [
+      { "label": "Tabel", "value": "5" },
+      { "label": "Normalisasi", "value": "3NF" }
+    ],
+    "link": "https://github.com/RotuaTampubolon"
+  },
+  {
+    "id": "p3",
+    "title": "Aplikasi Manajemen Tugas",
+    "category": "Software Engineering",
+    "course": "Rekayasa Perangkat Lunak (12S3303)",
+    "description": "Aplikasi manajemen tugas berbasis Java OOP dengan pendekatan rekayasa perangkat lunak terstruktur, dari requirement sampai implementasi.",
+    "thumbnail": "assets/img/p3.jpg",
+    "tags": ["Java OOP", "RPL"],
+    "metrics": [
+      { "label": "Kelas", "value": "6" },
+      { "label": "Fitur utama", "value": "3" }
+    ],
+    "link": "https://github.com/RotuaTampubolon"
+  },
+  {
+    "id": "p4",
+    "title": "Modernisasi Portofolio (Minggu 3)",
+    "category": "Web",
+    "course": "Pemrograman & Pengujian Web (12S3101)",
+    "description": "Refactor halaman portofolio ke Bootstrap 5.3: navbar responsif, grid kartu, modal, dan form floating label dengan validasi visual.",
+    "thumbnail": "assets/img/p4.jpg",
+    "tags": ["Bootstrap 5", "Responsive"],
+    "metrics": [
+      { "label": "Bootstrap", "value": "5.3.3" },
+      { "label": "Modal (Week 3)", "value": "4" }
+    ],
+    "link": "https://github.com/RotuaTampubolon/ppw-2026-week2-12S24028"
+  }
+]

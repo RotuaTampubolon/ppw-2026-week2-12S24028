@@ -1,0 +1,29 @@
+{
+  "name": "Rotua Immanuela Tampubolon",
+  "title": "Mahasiswa Sistem Informasi",
+  "institution": "Institut Teknologi Del",
+  "tagline": "Sistem Informasi · IT Del",
+  "headline": "Halo, saya Rotua Immanuela Tampubolon",
+  "summary": "Mahasiswa Sistem Informasi yang fokus pada pengembangan web, UI/UX, dan arsitektur data. Halaman ini menyajikan rekam jejak akademik, proyek, dan layanan konsultasi.",
+  "bio": "Saya memiliki ketertarikan mendalam pada pengembangan web frontend, desain UI/UX, dan arsitektur data. Di halaman ini, Anda dapat melihat rekam jejak akademik, proyek, dan cara menghubungi saya untuk konsultasi atau kolaborasi.",
+  "skills": [
+    "HTML5 & CSS3 Modern",
+    "JavaScript ES6+",
+    "UI/UX Design",
+    "Database SQL"
+  ],
+  "organizations": [
+    { "period": "2025–Sekarang", "role": "Staf Divisi Web IT Del" },
+    { "period": "2025–2026", "role": "Anggota Himpunan Mahasiswa Sistem Informasi" },
+    { "period": "2024–2025", "role": "Panitia Festival Teknologi Del" }
+  ],
+  "stats": [
+    { "label": "Proyek Akademik", "value": "4" },
+    { "label": "Paket Layanan", "value": "4" },
+    { "label": "Praktikum Web", "value": "Minggu 4" }
+  ],
+  "social": {
+    "github": "https://github.com/RotuaTampubolon",
+    "linkedin": ""
+  }
+}
