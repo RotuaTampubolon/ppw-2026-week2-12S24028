@@ -1,11 +1,20 @@
 const App = {
-  state: { projects: [], category: "all" },
+  state: { projects: [], services: [], profile: null, category: "all" },
 
   async init() {
     this.renderProjectState("loading");
     this.bindProjectEvents();
     try {
-      this.state.projects = await ApiService.getProjects();
+      const [projects, profile, services] = await Promise.all([
+        ApiService.getProjects(),
+        ApiService.getProfile(),
+        ApiService.getServices(),
+      ]);
+      this.state.projects = projects;
+      this.state.profile = profile;
+      this.state.services = services;
+      this.renderProfile();
+      this.renderServices();
       this.populateCategoryFilter();
       this.renderFilteredProjects();
     } catch (err) {
@@ -19,6 +28,41 @@ const App = {
     if (className) node.className = className;
     if (text !== undefined) node.textContent = text;
     return node;
+  },
+
+  renderProfile() {
+    const profile = this.state.profile;
+    document.getElementById("profileTagline").textContent = profile.tagline;
+    document.getElementById("profileHeadline").textContent = profile.headline;
+    document.getElementById("profileSummary").textContent = profile.summary;
+    document.getElementById("profileBio").textContent = `Halo! Saya ${profile.name}, ${profile.title.toLowerCase()} di ${profile.institution}. ${profile.bio}`;
+
+    const skillList = document.getElementById("skillList");
+    skillList.replaceChildren();
+    profile.skills.forEach((skill) => {
+      const item = this.createEl("li", "");
+      const icon = this.createEl("i", "bi bi-check2-circle text-accent me-2");
+      item.append(icon, document.createTextNode(skill));
+      skillList.appendChild(item);
+    });
+
+    const organizationList = document.getElementById("organizationList");
+    organizationList.replaceChildren();
+    profile.organizations.forEach((organization) => {
+      const item = this.createEl("li", "");
+      const period = this.createEl("strong", "", `${organization.period}: `);
+      item.append(period, document.createTextNode(organization.role));
+      organizationList.appendChild(item);
+    });
+  },
+
+  renderServices() {
+    const select = document.getElementById("layanan");
+    this.state.services.forEach((service) => {
+      const option = this.createEl("option", "", service.name);
+      option.value = service.id;
+      select.appendChild(option);
+    });
   },
 
   renderProjects(list) {
