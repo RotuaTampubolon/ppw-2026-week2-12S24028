@@ -176,6 +176,7 @@
                   type="text"
                   class="form-control"
                   id="nama"
+                  name="name"
                   placeholder="Nama Lengkap"
                   required
                 />
@@ -191,6 +192,7 @@
                   type="email"
                   class="form-control"
                   id="email"
+                  name="email"
                   placeholder="nama@del.ac.id"
                   required
                 />
@@ -214,6 +216,7 @@
                   type="tel"
                   class="form-control"
                   id="telepon"
+                  name="phone"
                   placeholder="08123456789"
                   pattern="[0-9]+"
                 />
@@ -226,6 +229,7 @@
                   type="number"
                   class="form-control"
                   id="usia"
+                  name="age"
                   placeholder="Usia"
                   min="15"
                   max="100"
@@ -304,6 +308,7 @@
                     class="form-check-input"
                     type="checkbox"
                     id="fitur1"
+                    name="features"
                     value="responsive"
                   />
                   <label class="form-check-label" for="fitur1"
@@ -315,6 +320,7 @@
                     class="form-check-input"
                     type="checkbox"
                     id="fitur2"
+                    name="features"
                     value="seo"
                   />
                   <label class="form-check-label" for="fitur2"
@@ -326,6 +332,7 @@
                     class="form-check-input"
                     type="checkbox"
                     id="fitur3"
+                    name="features"
                     value="cms"
                   />
                   <label class="form-check-label" for="fitur3"
@@ -340,6 +347,7 @@
                 <textarea
                   class="form-control"
                   id="pesan"
+                  name="message"
                   style="height: 120px"
                   placeholder="Deskripsi Proyek"
                   required
@@ -358,6 +366,7 @@
                   class="form-check-input"
                   type="checkbox"
                   id="tnc"
+                  name="termsAccepted"
                   required
                 />
                 <label class="form-check-label small" for="tnc"
@@ -402,28 +411,19 @@
       </div>
     </footer>
 
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="serviceToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong id="toastTitle" class="me-auto"></strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div id="toastMessage" class="toast-body"></div>
+      </div>
+    </div>
+
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/api-service.js"></script>
     <script src="js/app.js"></script>
-    <script>
-      (() => {
-        "use strict";
-        const forms = document.querySelectorAll(".needs-validation");
-        Array.from(forms).forEach((form) => {
-          form.addEventListener(
-            "submit",
-            (event) => {
-              if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add("was-validated");
-            },
-            false,
-          );
-        });
-      })();
-    </script>
   </body>
 </html>

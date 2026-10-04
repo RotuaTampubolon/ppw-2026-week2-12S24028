@@ -4,6 +4,7 @@ const App = {
   async init() {
     this.renderProjectState("loading");
     this.bindProjectEvents();
+    this.bindServiceForm();
     try {
       const [projects, profile, services] = await Promise.all([
         ApiService.getProjects(),
@@ -28,6 +29,54 @@ const App = {
     if (className) node.className = className;
     if (text !== undefined) node.textContent = text;
     return node;
+  },
+
+  bindServiceForm() {
+    const form = document.querySelector(".needs-validation");
+    if (form.dataset.eventsBound) return;
+    form.dataset.eventsBound = "true";
+    form.addEventListener("submit", (event) => this.submitServiceForm(event));
+  },
+
+  async submitServiceForm(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    form.classList.add("was-validated");
+    if (!form.checkValidity()) return;
+
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+    payload.features = formData.getAll("features");
+    payload.termsAccepted = formData.has("termsAccepted");
+    const submitButton = form.querySelector("button[type='submit']");
+    const originalText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.replaceChildren(
+      this.createEl("span", "spinner-border spinner-border-sm me-2"),
+    );
+    submitButton.appendChild(document.createTextNode("Mengirim..."));
+
+    try {
+      await ApiService.submitServiceOrder(payload);
+      this.showToast("Berhasil", "Permintaan layanan berhasil dikirim.", "success");
+      form.reset();
+      form.classList.remove("was-validated");
+    } catch (err) {
+      console.error("[App form submit]:", err);
+      this.showToast("Gagal", "Permintaan layanan tidak dapat dikirim.", "danger");
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    }
+  },
+
+  showToast(title, message, variant) {
+    const toast = document.getElementById("serviceToast");
+    document.getElementById("toastTitle").textContent = title;
+    document.getElementById("toastMessage").textContent = message;
+    toast.classList.remove("text-bg-success", "text-bg-danger");
+    toast.classList.add(`text-bg-${variant}`);
+    bootstrap.Toast.getOrCreateInstance(toast).show();
   },
 
   renderProfile() {
